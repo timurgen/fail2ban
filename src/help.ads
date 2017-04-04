@@ -1,9 +1,15 @@
-package Help is
-   -- writes out help to stdout
-   procedure Display_Help;
-   -- writes out version
-   procedure Display_Version;
+with GNAT.Command_Line; use GNAT.Command_Line;
 
-   Version: String := "0.0.1";
-   Program_Name: String := "adaban";
+
+package Help is
+   -- build help/usage text
+   procedure Init_Cli;
+   -- show help/usage text
+   procedure Display_Help;
+   -- register configuration options
+   procedure Capture_Args;
+
+private
+   Config_Cli: Command_Line_Configuration;
+   procedure Callback(Switch, Param, Section : String);
 end Help;
