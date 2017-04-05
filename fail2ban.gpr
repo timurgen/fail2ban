@@ -8,5 +8,10 @@ project Fail2Ban is
    package Ide is
    end Ide;
 
+   package Compiler is
+      for Default_Switches ("c") use ("-O", "-funroll-loops");
+      for Default_Switches ("ada") use ("-O", "-gnatn", "-funroll-loops", "-gnato", "-fstack-check", "-gnatf", "-gnat12");
+   end Compiler;
+
 end Fail2Ban;
 

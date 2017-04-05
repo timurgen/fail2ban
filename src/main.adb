@@ -16,16 +16,7 @@ begin
    Capture_Args;
 
    if Start_As_Daemon then
-      if Verbose then
-         Syslog(Log_Priority => LOG_NOTICE,
-                Text         => "Starting adaban as a daemon");
-      end if;
       Daemonize;
-      if Verbose then
-         Syslog(Log_Priority => LOG_NOTICE,
-                Text         => "Daemon started");
-      end if;
-
    end if;
 
 end Main;
