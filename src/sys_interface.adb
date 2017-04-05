@@ -1,3 +1,5 @@
+pragma License (GPL);
+
 with Ada.Unchecked_Conversion;
 with Interfaces.C.Strings; use Interfaces.C.Strings;
 with Interfaces.C; use Interfaces.C;

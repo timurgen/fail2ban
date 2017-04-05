@@ -1,3 +1,5 @@
+pragma License (GPL);
+
 with GNAT.Command_Line; use GNAT.Command_Line;
 with Ada.Command_Line;
 with GNAT.OS_Lib;

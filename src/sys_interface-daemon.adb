@@ -1,3 +1,5 @@
+pragma License (GPL);
+
 package body Sys_Interface.Daemon is
 
    procedure C_daemonize;

@@ -1,3 +1,5 @@
+pragma License (GPL);
+
 package Sys_Interface.Daemon is
 
    procedure Daemonize;

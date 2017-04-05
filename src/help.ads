@@ -1,5 +1,6 @@
-with GNAT.Command_Line; use GNAT.Command_Line;
+pragma License (GPL);
 
+with GNAT.Command_Line; use GNAT.Command_Line;
 
 package Help is
    -- build help/usage text

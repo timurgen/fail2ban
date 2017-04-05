@@ -1,3 +1,5 @@
+pragma License (GPL);
+
 package Config.Options is
    -- if we will start as daemon
    Start_As_Daemon : aliased Boolean := False;
