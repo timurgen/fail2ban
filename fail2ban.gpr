@@ -7,5 +7,7 @@ project Fail2Ban is
    package Ide is
    end Ide;
 
+   for Languages use ("Ada", "C");
+
 end Fail2Ban;
 

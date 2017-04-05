@@ -11,5 +11,4 @@ package Help is
 
 private
    Config_Cli: Command_Line_Configuration;
-   procedure Callback(Switch, Param, Section : String);
 end Help;

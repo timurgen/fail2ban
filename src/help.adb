@@ -13,7 +13,7 @@ package body Help is
       Set_Usage(Config_Cli,Usage => "-d");
       Define_Switch(Config_Cli, Config.Options.Start_As_Daemon'Access,  Switch => "-d", Help => "Start as daemon");
       Define_Switch(Config_Cli, Switch => "-v", Help => "Show version");
-      Define_Switch(Config_Cli, Switch => "--help", Help => "Show help (this text)");
+      Define_Switch(Config_Cli, cONFIG.Options.Display_Help'Access, Switch => "--help", Help => "Show help (this text)");
       Define_Switch(Config_Cli, Config.Options.Verbose'Access, Switch => "--verbose", Help => "Show verbose output");
    end Init_Cli;
 
@@ -36,19 +36,11 @@ package body Help is
       if Ada.Command_Line.Argument_Count = 0 then
          Display_Help;
       end if;
-      Getopt(Config => Config_Cli, Callback => Callback'Access);
+      Getopt(Config_Cli);
+      if Config.Options.Display_Help = True then
+         Display_Help;
+      end if;
    end Capture_Args;
 
-   procedure Callback (Switch, Param, Section : String) is
-   begin
-      if Switch = "--help" then
-         Display_Help;
-      elsif Switch = "-v" then
-         Put_Line("version:");
-      elsif Switch = "-d" then
-         Config.Options.Start_As_Daemon := True;
-      end if;
-
-   end Callback;
 
 end Help;
